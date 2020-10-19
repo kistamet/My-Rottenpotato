@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get  'auth/twitter', :as => 'login'
   get  'auth/:provider' => 'sessions#new'
   post 'all_destroy' => 'movies#all_destroy' , :as => 'all_destroy'
+  post '/movies/show_tmdb' => 'movies#search_tmdb'
 end

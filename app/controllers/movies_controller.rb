@@ -98,7 +98,5 @@ class MoviesController < ApplicationController
     @movie = Movie.find(id) # look up movie by unique ID
     render(:partial => 'movie', :object => @movie) if request.xhr?
   end
-      
-
-      
+        
 end

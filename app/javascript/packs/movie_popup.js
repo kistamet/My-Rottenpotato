@@ -18,6 +18,7 @@ var MoviePopup = {
     ,showMovieInfo: function(data, requestStatus, xhrObject) {
       // center a floater 1/2 as wide and 1/4 as tall as screen
       var oneFourth = Math.ceil($(window).width() / 4);
+
       $('#movieInfo').
         css({'left': oneFourth,  'width': 2*oneFourth, 'top': 250}).
         html(data).
@@ -31,4 +32,4 @@ var MoviePopup = {
       return(false);
     }
   };
-  $(MoviePopup.setup); 
+  $(MoviePopup.setup);

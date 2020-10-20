@@ -28,5 +28,14 @@ ActiveRecord::Schema.define(version: 2020_10_18_194802) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+  create_table "reviews", force: :cascade do |t|
+    t.integer "potatoes"
+    t.text "comments"
+    t.integer "moviegoer_id"
+    t.integer "movie_id"
+    t.index ["movie_id"], name: "index_reviews_on_movie_id"
+    t.index ["moviegoer_id"], name: "index_reviews_on_moviegoer_id"
+  end
+
 
 end

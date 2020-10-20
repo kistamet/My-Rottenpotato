@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
         auth = request.env["omniauth.auth"]
         session[:omniauth] = auth.except('extra')
         user = User.find_by(provider: auth["provider"], uid: auth["uid"]) ||   User.create_with_omniauth(auth)
-        #user = Moviegoer.find_by(provider: auth["provider"], uid: auth["uid"]) ||   Moviegoer.create_with_omniauth(auth)
+        #user = user.find_by(provider: auth["provider"], uid: auth["uid"]) ||   user.create_with_omniauth(auth)
         session[:user_id] = user.id
         redirect_to movies_path ,notice: "SIGHED IN"
       end
